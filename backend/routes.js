@@ -12,3 +12,17 @@ akses.route("/delete/:id").delete((req, res) => {
         .then(() => res.status(200).json("Buku sudah dihapus."))
         .catch((error) => res.status(400).json(error.message));
 });
+
+akses.route("/update/:id").put((req, res) => {
+    BukuModel.findByIdAndUpdate(req.params.id, req.body, {new: true})
+        .then((updatedBook) => res.status(200).json(updatedBook))
+        .catch((error) => res.status(400).json(error.message));
+});
+
+akses.route("/add").post((req, res) => {
+    BukuModel.create(req.body)
+        .then((createBook) => res.status(200).json(createBook))
+        .catch((error) => res.status(400).json(error.message));
+});
+
+module.exports = akses;
