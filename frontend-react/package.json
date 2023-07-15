@@ -21,7 +21,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy":"npm run build",
-    "deploy": "bookstore-react -d build"
+    "deploy": "Bookstore-react -d build"
   },
   "eslintConfig": {
     "extends": [
